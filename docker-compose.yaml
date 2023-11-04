@@ -1,0 +1,19 @@
+version: '3'
+services:
+  api:
+    build: 
+      dockerfile: Dockerfile
+      context: ./Movie-Theater-api
+    ports:
+      - "8080:8080"
+  web:
+    build: 
+      dockerfile: Dockerfile
+      context: ./movies/frontend
+    depends_on:
+      - api
+    volumes:
+      - /app/frontend/node_modules
+      - ./movies/frontend:/app/frontend
+    ports:
+      - "3000:3000"

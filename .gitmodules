@@ -1,0 +1,6 @@
+[submodule "Movie-Theater-API"]
+	path = Movie-Theater-API
+	url = https://github.com/Huy1996/Movie-Theater-API.git
+[submodule "movies"]
+	path = movies
+	url = https://github.com/chau-doan/movies.git
