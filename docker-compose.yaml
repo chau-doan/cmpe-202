@@ -6,12 +6,14 @@ services:
       context: ./Movie-Theater-api
     ports:
       - "8080:8080"
+    volumes:
+      - ./Movie-Theater-API:/app
   web:
     build: 
       dockerfile: Dockerfile
       context: ./movies/frontend
-    depends_on:
-      - api
+    # depends_on:
+    #   - api
     volumes:
       - /app/frontend/node_modules
       - ./movies/frontend:/app/frontend

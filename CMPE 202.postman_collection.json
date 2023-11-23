@@ -1,0 +1,1238 @@
+{
+	"info": {
+		"_postman_id": "89a3ef42-44b1-41f0-a839-702c739c2869",
+		"name": "CMPE 202",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23040165",
+		"_collection_link": "https://dark-crater-166358.postman.co/workspace/Go-Shopping-Cart~4d6b03db-8c2c-40d8-a979-0ddd8549a475/collection/23040165-89a3ef42-44b1-41f0-a839-702c739c2869?action=share&source=collection_link&creator=23040165"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Huy\",\n    \"password\": \"Test123\",\n    \"firstname\": \"Huy\",\n    \"lastname\": \"Doe\",\n    \"email\":\"Huy@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create admin",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Thuy\",\n    \"password\": \"Test123\",\n    \"firstname\": \"Thuy\",\n    \"lastname\": \"Luu\",\n    \"email\": \"Thuy@tch.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Alex\",\n    \"password\": \"Test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Alex\",\n    \"password\": \"Test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upgradeToPremium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\": \"4242424242424242\",\r\n    \"expMonth\": \"12\",\r\n    \"expYear\": \"2025\",\r\n    \"cvc\": \"312\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/1/upgradeAccount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"1",
+								"upgradeAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel premium",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/4/cancel",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"123Test\",\n    \"newPassword\": \"Test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/6/changepw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"6",
+								"changepw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Huy\",\n    \"lastname\": \"Ok\",\n    \"email\": \"Okla@sjsu.edu\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/1/update-info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"1",
+								"update-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"jsonData = pm.response.json();",
+									"access_token = jsonData.token;",
+									"pm.environment.set(\"access_token\", \"Bearer \" + access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Jonny\",\n    \"password\": \"Test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/authenticate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movie by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movie by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"The walking Dead\",\n    \"description\": \"Scary zombie movie\",\n    \"duration_in_minutes\": 120,\n    \"release_date\": \"09/20/2023\",\n    \"poster_url\": \"Some url\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"The walking Dead - Season 1\",\n    \"description\": \"Scary zombie movie\",\n    \"duration_in_minutes\": 120,\n    \"release_date\": \"09/20/2023\",\n    \"poster_url\": \"Some url\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get upcoming movies",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Screen",
+			"item": [
+				{
+					"name": "Get all screens",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/screens",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"screens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Screen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Screen 1\",\n    \"locationId\": \"1\",\n    \"capacity\": 40\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/screens",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"screens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update screen",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dinasour\",\n    \"locationId\": \"1\",\n    \"capacity\": 40\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/screens/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"screens",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get screen by location id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/screens/locations/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"screens",
+								"locations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Create Location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"San Jose\",\n    \"state\": \"CA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/locations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/locations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get location by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/locations/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"locations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get location by id Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"city\": \"Monterey\",\n    \"state\": \"CA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/locations/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"locations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/locations/search?state=CA&city=San Jose",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"locations",
+								"search"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "CA"
+								},
+								{
+									"key": "city",
+									"value": "San Jose"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ShowTime",
+			"item": [
+				{
+					"name": "Create showtime",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movieId\": 1,\n    \"screenId\": 1,\n    \"date\": \"12/03/2023\",\n    \"startTime\": \"15:50:00\",\n    \"price\": 68.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/showtime",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"showtime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get showtime by movie id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/showtime/1/movie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"showtime",
+								"1",
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get showtime by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/showtime/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"showtime",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get showtime by location id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/showtime/1/location",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"showtime",
+								"1",
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get showtime by date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/showtime/12-03-2023/date",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"showtime",
+								"12-03-2023",
+								"date"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discount",
+			"item": [
+				{
+					"name": "Get all discount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/discount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"discount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tueday Special",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"percent\": 50.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/discount/tueday-special",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"discount",
+								"tueday-special"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Before 6PM",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"percent\": 50.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/discount/before-6pm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"discount",
+								"before-6pm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Get all bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 3,\n    \"show_time_id\": 1,\n    \"seats\": [1,2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bookings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get booking by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update booking to paid",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings/paid/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"paid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel booking",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings/cancel/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"cancel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get booking by user id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings/user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get booking by user id and date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings/user/2/date/2023-10-08",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"user",
+								"2",
+								"date",
+								"2023-10-08"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get watched movies in 30days by userid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bookings/watched-movie-30?id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookings",
+								"watched-movie-30"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Create Payment Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\": \"4242424242424242\",\r\n    \"expMonth\": \"12\",\r\n    \"expYear\": \"2023\",\r\n    \"cvc\": \"123\",\r\n    \"username\": \"Huy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/payment/card/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"card",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charge",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stripeToken\":\"tok_1O3or0Ca9X5AOOSmdXklrcqm\",\r\n    \"username\":\"Huy\",\r\n    \"amount\":10.23\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/payment/charge",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment",
+								"charge"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "By Locations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aHV5bHV1OTU5NSIsInJvbGVzIjpbIlJPTEVfRU1QTE9ZRUUiXSwiZXhwIjoxNjk4MDk0OTI0fQ.fDFco4ZWlfQKrn2Zq6zy66A3eSJQx1eT_6R5dzT0oZVjqN3fM7T6V9H6cF7EJNCBhCEnmEhlUeJyuBt_GJIeMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/analytic/locations?days=30",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"analytic",
+								"locations"
+							],
+							"query": [
+								{
+									"key": "days",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aHV5bHV1OTU5NSIsInJvbGVzIjpbIlJPTEVfRU1QTE9ZRUUiXSwiZXhwIjoxNjk4MDk0OTI0fQ.fDFco4ZWlfQKrn2Zq6zy66A3eSJQx1eT_6R5dzT0oZVjqN3fM7T6V9H6cF7EJNCBhCEnmEhlUeJyuBt_GJIeMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/analytic/movies?days=90",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"analytic",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "days",
+									"value": "90"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080/api"
+		}
+	]
+}
