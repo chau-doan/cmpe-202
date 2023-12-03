@@ -8,6 +8,9 @@ services:
       - "8080:8080"
     volumes:
       - ./Movie-Theater-API:/app
+    # environment:
+    #   - AWS_ACCESS_KEY_ID=AKIASH3ZAY7TEGIDP45I
+    #   - AWS_SECRET_ACCESS_KEY=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
   web:
     build: 
       dockerfile: Dockerfile
